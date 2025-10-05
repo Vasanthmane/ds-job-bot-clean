@@ -1,0 +1,184 @@
+keywords:
+  include:
+    - data scientist
+    - data analyst
+    - data engineer
+    - analytics engineer
+    - machine learning engineer
+    - bi analyst
+    - bi developer
+    - business intelligence
+    - quantitative analyst
+    - research scientist
+    - ai engineer
+    - ml engineer
+    - python
+    - r
+    - sql
+    - pandas
+    - numpy
+    - scikit-learn
+    - tensorflow
+    - pytorch
+    - spark
+    - kafka
+    - airflow
+    - dbt
+    - snowflake
+    - redshift
+    - bigquery
+    - postgres
+    - nosql
+    - tableau
+    - power bi
+    - looker
+    - etl
+    - elt
+    - data modeling
+    - data warehousing
+    - machine learning
+    - deep learning
+    - predictive modeling
+    - statistical analysis
+    - a/b testing
+    - nlp
+    - natural language processing
+    - computer vision
+    - data governance
+  exclude: [volunteer, unpaid]
+
+title_must_include: []   # keep broad coverage
+
+title_level_blocklist:
+  - senior
+  - sr.
+  - staff
+  - principal
+  - lead
+  - architect
+  - manager
+  - director
+  - head
+  - distinguished
+  - fellow
+  - expert
+
+clearance_blocklist:
+  - security clearance
+  - public trust
+  - top secret
+  - secret clearance
+  - ts/sci
+  - tssci
+  - ts-sci
+  - ssbi
+  - sci eligibility
+  - dod clearance
+  - ci poly
+  - polygraph
+  - dod secret
+  - dod top secret
+  - public-trust
+  - clearance required
+
+experience:
+  max_required_years: 3   # strict "< 4 years"
+
+sponsorship_preference:
+  enabled: true
+  positive_signals: [sponsor, sponsorship, h1b, h-1b, visa support, visa sponsorship, work visa]
+  negative_signals: [no sponsorship, cannot sponsor, sponsorship unavailable, not provide sponsorship]
+
+boost_terms: [python, sql, spark, airflow, dbt, snowflake, aws, gcp, bigquery, tableau, power bi]
+
+us_filter:
+  enabled: true
+  enforce: true
+
+limits:
+  max_items_per_run: 60
+  max_message_chars: 39000
+
+dedupe_days: 180
+
+sources:
+  greenhouse_companies:
+    - airbnb
+    - affirm
+    - asana
+    - atlassian
+    - benchling
+    - box
+    - brex
+    - cloudflare
+    - databricks
+    - datadog
+    - doordash
+    - dropbox
+    - duolingo
+    - docker
+    - figma
+    - gitlab
+    - hubspot
+    - instacart
+    - mongodb
+    - notion
+    - okta
+    - openai
+    - plaid
+    - reddit
+    - rippling
+    - robinhood
+    - roblox
+    - samsara
+    - shopify
+    - slack
+    - snowflake
+    - square
+    - stripe
+    - twilio
+    - zapier
+    - zscaler
+
+  lever_companies:
+    - discord
+    - coursera
+    - elastic
+    - postman
+    - block
+    - scaleai
+    - notion
+    - niantic
+    - cointracker
+    - calm
+
+  ashby_subdomains:
+    - anthropic
+    - databricks
+    - linear
+    - mercury
+    - notion
+    - openai
+    - persona
+    - ramp
+    - retool
+    - rippling
+    - vercel
+    - hex
+    - humane
+    - cruise
+
+  smartrecruiters_companies: [smartrecruiters, nokia, ubisoft]
+  workable_accounts:        [mozilla, hotjar, canonical, komodohealth]
+  recruitee_companies:      [trivago, backbase, mollie]
+  bamboohr_subdomains:      [weightsandbiases, chainalysis]
+  personio_companies:       [deepset, y42]
+
+  rss_feeds:
+    - https://ai-jobs.net/jobfeed/
+    - https://weworkremotely.com/categories/remote-data-jobs.rss
+    - https://jobspresso.co/remote-work-jobs/feed/
+
+aggregators:
+  adzuna:  { enabled: true,  country_env: ADZUNA_COUNTRY }
+  usajobs: { enabled: true }
