@@ -3,7 +3,13 @@ name: ds-job-bot
 on:
   schedule:
     - cron: "*/30 * * * *"   # every 30 minutes (UTC)
-  workflow_dispatch:         # allow manual run
+  workflow_dispatch:         # manual run button
+  push:
+    branches: [ "main" ]
+    paths:
+      - "**.py"
+      - "config.yaml"
+      - ".github/workflows/cron.yml"
 
 permissions:
   contents: read
@@ -33,17 +39,17 @@ jobs:
 
       - name: Run bot
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL:   ${{ secrets.SLACK_CHANNEL }}
-          ADZUNA_APP_ID:   ${{ secrets.ADZUNA_APP_ID }}
-          ADZUNA_APP_KEY:  ${{ secrets.ADZUNA_APP_KEY }}
-          ADZUNA_COUNTRY:  us
-          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
-          USAJOBS_EMAIL:   ${{ secrets.USAJOBS_EMAIL }}
-          RECENCY_DAYS:    ${{ vars.RECENCY_DAYS }}
-          MAX_ITEMS_PER_RUN: ${{ vars.MAX_ITEMS_PER_RUN }}
-          ALLOW_INTERNSHIPS: ${{ vars.ALLOW_INTERNSHIPS }}
-          SNAPSHOT_N:      ${{ vars.SNAPSHOT_N }}
+          SLACK_BOT_TOKEN:     ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL:       ${{ secrets.SLACK_CHANNEL }}
+          ADZUNA_APP_ID:       ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY:      ${{ secrets.ADZUNA_APP_KEY }}
+          ADZUNA_COUNTRY:      us
+          USAJOBS_API_KEY:     ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_EMAIL:       ${{ secrets.USAJOBS_EMAIL }}
+          RECENCY_DAYS:        ${{ vars.RECENCY_DAYS }}
+          MAX_ITEMS_PER_RUN:   ${{ vars.MAX_ITEMS_PER_RUN }}
+          ALLOW_INTERNSHIPS:   ${{ vars.ALLOW_INTERNSHIPS }}
+          SNAPSHOT_N:          ${{ vars.SNAPSHOT_N }}
         run: |
           . .venv/bin/activate
           python main.py
